@@ -14,6 +14,7 @@ let phoneError = document.querySelector(".phone-error");
 let salaryError = document.querySelector(".salary-error");
 
 
+console.log(department);
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     clearErrors();
@@ -21,8 +22,12 @@ form.addEventListener("submit", (event) => {
     let emailValue = email.value.trim();
     let phoneValue = phone.value.trim();
     let salaryValue = salary.value.trim();
+    
+    
+
     if (nameValidation(nameValue) && emailValidation(emailValue) && phoneValidation(phoneValue) && salaryValidation(salaryValue)) {
         alert("Form submitted successfully");
+        displayInfo();
         clearInput();
     }
 });
@@ -83,8 +88,6 @@ const clearErrors = () => {
 
 // display information
 const displayInfo = () => {
-    // new div create
-    let newDiv = document.createElement("div");
     // values of the employee
     let nameValue = fname.value.trim();
     let emailValue = email.value.trim();
@@ -93,6 +96,8 @@ const displayInfo = () => {
     let departValue = department.value.trim();
 
     if (nameValue != "" && emailValue != "" && phoneValue != "" && salaryValue != "" && departValue != "") {
+        // new div create
+        let newDiv = document.createElement("div");
         //new div content that print in the card
         newDiv.innerHTML = `
         <h3>${nameValue}</h3>
@@ -120,20 +125,12 @@ const updateDiv = (btn) => {
     //parent div (the one containing the information)
     let parentDiv = btn.parentElement;
 
-    // Extract the current values from the displayed div
-    let nameValue = parentDiv.querySelector("h3").innerText;
-    let emailValue = parentDiv.querySelector(".email").innerText.replace("Email: ", "");
-    let phoneValue = parentDiv.querySelector(".phone").innerText.replace("Phone: ", "");
-    let salaryValue = parentDiv.querySelector(".salary").innerText.replace("Salary: ", "");
-    let departmentValue = parentDiv.querySelector(".department").innerText.replace("Department: ", "");
-
     // Fill the form fields with the extracted values for editing
-    document.querySelector("#name").value = nameValue;
-    document.querySelector("#email").value = emailValue;
-    document.querySelector("#phoneNum").value = phoneValue;
-    document.querySelector("#salary").value = salaryValue;
-    document.querySelector("#department").value = departmentValue;
+    document.querySelector("#name").value = parentDiv.querySelector("h3").innerText;
+    document.querySelector("#email").value = parentDiv.querySelector(".email").innerText.replace("Email: ", "");
+    document.querySelector("#phoneNum").value = parentDiv.querySelector(".phone").innerText.replace("Phone: ", "");
+    document.querySelector("#salary").value =  parentDiv.querySelector(".salary").innerText.replace("Salary: ", "");
+    document.querySelector("#department").value = parentDiv.querySelector(".department").innerText.replace("Department: ", "");
 
-    // Remove the existing div after transferring data to the form
-    parentDiv.remove();
+    document.querySelector("#btn").innerText= "Edit Employee.."
 };
