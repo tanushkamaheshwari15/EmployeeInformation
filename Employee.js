@@ -18,12 +18,11 @@ console.log(department);
 form.addEventListener("submit", (event) => {
     event.preventDefault();
     clearErrors();
+
     let nameValue = fname.value.trim();
     let emailValue = email.value.trim();
     let phoneValue = phone.value.trim();
     let salaryValue = salary.value.trim();
-    
-    
 
     if (nameValidation(nameValue) && emailValidation(emailValue) && phoneValidation(phoneValue) && salaryValidation(salaryValue)) {
         alert("Form submitted successfully");
@@ -98,6 +97,7 @@ const displayInfo = () => {
     if (nameValue != "" && emailValue != "" && phoneValue != "" && salaryValue != "" && departValue != "") {
         // new div create
         let newDiv = document.createElement("div");
+
         //new div content that print in the card
         newDiv.innerHTML = `
         <h3>${nameValue}</h3>
@@ -129,8 +129,8 @@ const updateDiv = (btn) => {
     document.querySelector("#name").value = parentDiv.querySelector("h3").innerText;
     document.querySelector("#email").value = parentDiv.querySelector(".email").innerText.replace("Email: ", "");
     document.querySelector("#phoneNum").value = parentDiv.querySelector(".phone").innerText.replace("Phone: ", "");
-    document.querySelector("#salary").value =  parentDiv.querySelector(".salary").innerText.replace("Salary: ", "");
+    document.querySelector("#salary").value = parentDiv.querySelector(".salary").innerText.replace("Salary: ", "");
     document.querySelector("#department").value = parentDiv.querySelector(".department").innerText.replace("Department: ", "");
 
-    document.querySelector("#btn").innerText= "Edit Employee.."
+    document.querySelector("#btn").innerText = "Edit Employee.."
 };
