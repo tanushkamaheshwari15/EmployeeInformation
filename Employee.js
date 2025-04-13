@@ -46,9 +46,19 @@ form.addEventListener("submit", (event) => {
         if (editingCard) {
             // If editing, update the existing card
             updateCard(editingCard, nameValue, emailValue, phoneValue, salaryValue, departValue);
+            localStorage.setItem("Name", nameValue);
+            localStorage.setItem("Email",emailValue);
+            localStorage.setItem("Phone Number", phoneValue);
+            localStorage.setItem("Salary", salaryValue);
+            localStorage.setItem("Departmenet", departValue);
         } else {
             // If not editing, create a new card
             createCard(nameValue, emailValue, phoneValue, salaryValue, departValue);
+            localStorage.setItem("Name", nameValue);
+            localStorage.setItem("Email",emailValue);
+            localStorage.setItem("Phone Number", phoneValue);
+            localStorage.setItem("Salary", salaryValue);
+            localStorage.setItem("Departmenet", departValue);
         }
         resetForm();
     }
@@ -136,7 +146,6 @@ const createCard = (name, email, phone, salary, department) => {
         <button onclick="editCard(this)">Edit</button>
         <button onclick="removeCard(this)">Delete</button>
     `;
-
     document.body.appendChild(newDiv);
 };
 

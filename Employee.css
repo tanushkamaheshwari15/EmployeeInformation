@@ -2,6 +2,12 @@
     margin: 0%;
 }
 
+body {
+    background-image: url("https://t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
 form {
     display: flex;
     flex-direction: column;
@@ -44,7 +50,8 @@ form button {
     margin: auto;
     border-radius: 10px;
 }
-form button:hover{
+
+form button:hover {
     background-color: rgb(95, 148, 150);
 }
 
@@ -70,36 +77,31 @@ div {
     height: fit-content;
     padding: 10px;
     margin-right: 50px;
-    background-color:aliceblue;
+    background-color: aliceblue;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
-    margin-left:20px;
+    margin-left: 20px;
     display: inline-block;
 
 }
 
-div button{
+div button {
     border: 2px solid black;
     border-radius: 5px;
-    background-color:rgb(202, 200, 200);
+    background-color: rgb(202, 200, 200);
     font-size: 16px;
     font-weight: 300;
     width: 150px;
     margin: auto;
 }
-div button:hover{
+
+button:hover {
     background-color: darkkhaki;
 }
-div p{
+
+div p {
     font-size: 20px;
     padding: 5px;
-
-}
-
-body {
-    background-image: url("https://t3.ftcdn.net/jpg/03/55/60/70/360_F_355607062_zYMS8jaz4SfoykpWz5oViRVKL32IabTP.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
 }
